@@ -41,9 +41,6 @@ CREATE TABLE IF NOT EXISTS `pruebatecnica`.`activos` (
   `area_id` BIGINT NULL DEFAULT NULL,
   `persona_id` BIGINT NULL DEFAULT NULL,
   `tipo_id` BIGINT NULL DEFAULT NULL,
-  `tipo_id1` BIGINT NOT NULL,
-  `area_id1` BIGINT NOT NULL,
-  `persona_id1` BIGINT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `FKk0a2tj3mwiaelelqgbn1ti2u6` (`area_id` ASC) VISIBLE,
   INDEX `FKbj828at1s9t6rpjexwvf2vjus` (`persona_id` ASC) VISIBLE,
@@ -52,27 +49,7 @@ CREATE TABLE IF NOT EXISTS `pruebatecnica`.`activos` (
   INDEX `fk_activos_area1_idx` (`area_id1` ASC) VISIBLE,
   INDEX `fk_activos_persona1_idx` (`persona_id1` ASC) VISIBLE)
 ENGINE = MyISAM
-AUTO_INCREMENT = 15
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
-
-
--- -----------------------------------------------------
--- Table `pruebatecnica`.`area`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `pruebatecnica`.`area` ;
-
-CREATE TABLE IF NOT EXISTS `pruebatecnica`.`area` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(30) NOT NULL,
-  `ciudad_id` BIGINT NULL DEFAULT NULL,
-  `identificacion` VARCHAR(30) NOT NULL,
-  `ciudad_id1` BIGINT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `FK9ykgi6ee4k2s4oy3he4bfafor` (`ciudad_id` ASC) VISIBLE,
-  INDEX `fk_area_ciudad1_idx` (`ciudad_id1` ASC) VISIBLE)
-ENGINE = MyISAM
-AUTO_INCREMENT = 17
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -87,9 +64,26 @@ CREATE TABLE IF NOT EXISTS `pruebatecnica`.`ciudad` (
   `name` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = MyISAM
-AUTO_INCREMENT = 5
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `pruebatecnica`.`area`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `pruebatecnica`.`area` ;
+
+CREATE TABLE IF NOT EXISTS `pruebatecnica`.`area` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(30) NOT NULL,
+  `ciudad_id` BIGINT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FK9ykgi6ee4k2s4oy3he4bfafor` (`ciudad_id` ASC) VISIBLE)
+ENGINE = MyISAM
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
 
 
 -- -----------------------------------------------------
@@ -103,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `pruebatecnica`.`persona` (
   `name` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = MyISAM
-AUTO_INCREMENT = 2
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -118,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `pruebatecnica`.`tipo` (
   `name` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = MyISAM
-AUTO_INCREMENT = 6
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
